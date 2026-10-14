@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tales by the Fire</title>
+<meta name="description" content="Folktales retold in English, starting with stories from the Xhosa tradition.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F4F9; --ink:#1B2140; --muted:#565D7D; --accent:#E0A100; --line:#D3D7E6; --hover:#E8EBF5;
+  --display:"Young Serif",Georgia,"Times New Roman",serif;
+  --text:"Literata",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#171B33;--ink:#ECEBF5;--muted:#A5AAC8;--accent:#F2B632;--line:#303660;--hover:#20254A;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#171B33;--ink:#ECEBF5;--muted:#A5AAC8;--accent:#F2B632;--line:#303660;--hover:#20254A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:1.125rem;line-height:1.75}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.5rem}
+
+.top{position:relative;padding:4.5rem 0 2rem;border-bottom:2px solid var(--ink);margin-bottom:2.5rem}
+.sun{position:absolute;right:0;bottom:0;width:6rem;height:3rem;background:var(--accent);border-radius:6rem 6rem 0 0}
+.top h1{position:relative;margin:0 0 .75rem;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,9vw,3.6rem);line-height:1.05;letter-spacing:-.01em;max-width:11ch}
+.top p{position:relative;margin:0;max-width:26rem;color:var(--muted);font-size:1.05rem;line-height:1.55}
+
+.row{display:block;text-decoration:none;padding:1.25rem 1rem;margin:0 -1rem;border-radius:.5rem}
+.row:hover{background:var(--hover)}
+.row h2{margin:0 0 .35rem;font-family:var(--display);font-weight:400;font-size:1.65rem;line-height:1.2}
+.row p{margin:0 0 .6rem;color:var(--muted);font-size:1rem;line-height:1.55}
+.meta{font-size:.9rem;color:var(--muted)}
+.meta span+span{margin-left:1.1rem}
+.soon{margin:2rem 0 0;color:var(--muted);font-size:1rem;font-style:italic}
+
+.back{display:inline-block;margin:1.5rem 0 0;color:var(--muted);font-size:1rem}
+.back:hover{color:var(--ink)}
+article{padding:2.5rem 0 4rem}
+article h1{margin:0 0 .5rem;font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,8vw,3.2rem);line-height:1.1}
+.note{margin:0 0 2.5rem;padding-bottom:1.5rem;border-bottom:2px solid var(--accent);color:var(--muted);font-size:1rem;font-style:italic}
+article p{margin:0 0 1.2rem}
+article p.end{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-family:var(--display)}
+
+.lang{display:flex;gap:.5rem;margin:1.5rem 0 0}
+.lang a{padding:.3rem .9rem;border:1px solid var(--line);border-radius:2rem;color:var(--muted);text-decoration:none;font-size:.95rem;line-height:1.5}
+.lang a:hover{color:var(--ink);border-color:var(--ink)}
+.lang a[aria-current="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+article{padding-top:1.5rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:no-preference){.row{transition:background .15s}}
+@media (max-width:30rem){.sun{width:4.5rem;height:2.25rem;border-radius:4.5rem 4.5rem 0 0}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<div class="wrap"><footer>Tales by the Fire. New stories are added over time.</footer></div>
+
+<script>
+var SITE = {
+  title: "Tales by the Fire",
+  blurb: "Folktales retold in English, starting with stories from the Xhosa tradition."
+};
+
+var STORIES = [
+  {
+    id: "the-jackal-and-the-baboon",
+    title: "The Jackal and the Baboon",
+    tag: "Xhosa folktale",
+    minutes: 4,
+    blurb: "A hungry jackal, a trusting baboon, and a plan that goes wrong for the one who cheats.",
+    note: "A Xhosa folktale (intsomi), retold in English.",
+    body: [
+      "Once upon a time, in the land of folktales, a jackal met his friend the baboon.",
+      "“Hello, my friend! How are you?” the jackal greeted him cheerfully.",
+      "“Hello, Jackie. I’m well, except that I hurt my foot yesterday and now I’m limping,” said the baboon, pointing to it.",
+      "They sat together on a rock, chatting about life, and they talked until the sun went down. By then the jackal was ravenous. The baboon’s limp was a nuisance, too, for otherwise he would simply have sent his friend off to find something to eat. So he thought, and thought, and at last he came up with a plan.",
+      "“I’m terribly hungry, my friend,” he said with a sly smile. “But there is a way out of it, if you’re willing.”",
+      "“Go on, I’m listening,” said the baboon, though he didn’t quite trust the jackal.",
+      "“There’s a tree in the field full of sweet peaches. Let’s go and help each other pick them, so we can eat until we’re full.” The jackal kept his eyes on the ground as he spoke. The peaches were real enough, but they hung high in the tree, far out of reach. “I can see you’re limping, so here’s what we’ll do. You’ll climb onto my back and up into the tree, pick a peach, eat it, and come down. Then I’ll climb onto yours, pick one, eat it, and come down.”",
+      "“I agree, my friend. Let’s do it,” said the baboon happily. “I’m starving.”",
+      "So it was settled. They would go to the tree, and one would climb on the other’s back. When the first had eaten and come down, the other would take his turn. But then a new problem stopped them in their tracks: who would go first? The jackal wanted to eat first, and so did the baboon. They sat there hungry and stuck, neither willing to give way.",
+      "While they were still arguing, an old woman came along on her way to the field to gather spinach.",
+      "“What’s troubling you, my dears, that you look so worried?” she asked.",
+      "They told her everything: they were hungry, the peaches were there, and they even had a plan, but they couldn’t agree who should eat first. The old woman listened carefully, and after a moment she had an idea of her own.",
+      "“I have a shilling here,” she said. “I’ll toss it into the air and let it fall. If the side with the inscription lands face up, the jackal eats first. If the plain side lands face up, the baboon eats first.”",
+      "They agreed, and waited. The old woman flipped the coin, and the three of them watched it fall. There was no doubt about it: the plain side was face up, so the baboon would go first. The old woman went on her way to the field, and the two friends set off for the peach tree.",
+      "When they arrived, the jackal crouched at the foot of the tree. The baboon climbed onto his back and up into the branches, ate one peach, dropped the pit, and came down.",
+      "Now it was the jackal’s turn. He climbed onto the baboon’s back and up into the tree. He picked a peach and ate it. He picked a second and ate it. He picked a third and ate it, hiding the pits so the baboon wouldn’t notice. He ate and ate, and showed no sign of coming down.",
+      "“Jackal! Jackal!” the baboon called up. “You’ve been up there a long time. We agreed you would eat one peach and come down so I could go up again.”",
+      "His voice was heavy with hopelessness.",
+      "“I’m still choosing, my friend. Wait,” the jackal replied, and the rascal went on stuffing himself until his belly was tight.",
+      "The baboon fell silent. Then he looked down at the long grass beside the tree, and there lay a scatter of peach pits, flung out of sight by the jackal. He counted them once, and then again, and he understood everything. He did not cry, and he did not argue. He simply smiled, and called up in a cheerful voice.",
+      "“Take all the time you need, my friend! I’m going to find the old woman and ask how many peaches each of us may eat. Perhaps she would like to count the pits.”",
+      "Up in the branches, the jackal froze. He scrambled down so fast that he forgot how full he was. His belly was so tight and heavy that he missed the last branch, tumbled to the ground with a thump, and lay there groaning, too stuffed to stand, let alone run.",
+      "“Still choosing, were you?” said the baboon, looking down at him. “It seems you’ve chosen the ground.”",
+      "Just then the old woman came back from the field with her bundle of spinach. She looked at the jackal sprawled beneath the tree, then at the pits scattered in the grass, and she shook her head.",
+      "“A cheat’s belly is the heaviest load a person can carry,” she said. “Jackal, you’ll lie there until you’ve learned that.” Then she turned to the baboon, who had been patient enough to count and wise enough to stay calm, and she pressed the shilling into his hand. “Go to the shop nearby and buy yourself peaches and bananas. You’ve earned them.”",
+      "The baboon limped off, delighted. Behind him the jackal groaned all afternoon and into the evening, and every time he thought of the baboon’s bananas, his belly ached a little more.",
+      "@And that is the tale of the baboon and the jackal."
+    ]
+  }
+];
+
+STORIES[0].xh = {
+  title: "Udyakalashe nemfene",
+  note: "Intsomi yesiXhosa.",
+  body: [
+    "Komnye unyaka, kwilizwe lee ntsomi udyakalashe wadibana nemfene umhlobo wakhe.",
+    "“Mholo mhlobo wam, uyaphila?” wabulisa evuyile udyakalashe.",
+    "“Mholo dyaki, akhonto, ngaphandle kokukruneka inyawo izolo” yaphendula imfene ikhomba inyawo layo.",
+    "Bahlala elityeni udyakalashe nomhlobo wakhe bencokola ezobomi. Bancokola kwada kwatshona ilanga, elambile udyakalashe exakwe kukukruneka kwemfene, ngelakhe wayezakuthuma imfene iyozama into esiwa phantsi kwempumlo, kuba elambile. Wacinga, wacinga, weza necebo.",
+    "“Indlela endilambe ngayo mhlobo wam, kodwa likhona icebo wena xa ungavuma” watsho udyakalashe encumile.",
+    "“Yitsho, ndimamele” yaphendula imfene kodwa ingamthembanga ncam udyakalashe.",
+    "“Kukho umthi onee pesika ezimnadi entsimini, masiye, sincedane sikhe iipesika sitye sihluthe” watsho udyakalashe ejonge phantsi. Ezo pesika wayethetha ngazo zazikhona ukuba khona, ziphezulu emthini, engenayo idlela yokufikelela. “Ndiyabona ukrunekile mhlobo wam, uzakukhwela kum emqolo, ukhwelwe emthini, ukhe, utye ibenye, wehle, nam ngokunjalo ndikhwele kuwe, ndikhe ibenye, nditye, ndihle.”",
+    "“Ndivumelana nawe mhlobo wam, masenze njalo, ndilambe ndiyafa yindlala” yaphendula imfene ivuyile.",
+    "Bagqiba ngelithi bazakusondela emthini, okhwelayo akhwele emqolo womnye, akugqiba ukutya ehle kukhwele omnye. Yabanye ingxaki ebaxakayo, kuzakuqala bani kubo bobabini, udyakalashe efuna kutye yena kuqala, nemfene ngokunjalo ifuna kuqale kutye yona. Bahlala apho belambile kodwa bexakiwe.",
+    "Besaxakwe njalo kwafika umhakhulu owayesiya entsimini, eyovuna umfino.",
+    "“Nixakwe yintoni bafondini, nasizeleka kangaka?” wabuza umhakhulu.",
+    "Bayitsho ingxaki yabo kumhakhulu, becacisa ukuba balambile, iipesika zikhona, icebo nalo likhona kodwa abavumelani, udyakalashe ufuna ukutya kuqala, nemfene ngokunjalo ifuna ukutya kuqala. Wamamela, wamamela umhakhulu, weza necebo.",
+    "“Ndine sheleni apha kum, ndizayijula phezulu iwele phantsi, xa icala elinombhalo wesheleni liphezulu, ngudyaki ozakutya kuqala, ukuba licala elingenambhalo, imfene izakutya kuqala.”",
+    "Bavumelana balinda umhakhulu ajule isheleni. Wenza njalo umhakhulu, wayijula yawa bejonge bobathathu. Kwacaca mhlophe ukuba imfene izakutya kuqala kuba icala elingenambhalo wesheleni yabalilo phezulu. Wabashiya apho umhakhulu waya entsimini, bona baya kumthi weepesika.",
+    "Bakufika udyakalashe wasondela emthini yakhwela imfene kumqolo kadyakalashe, yakhwela emthini, yatya ipesika yanye, yajula ipeta, yehla.",
+    "Wakhwela naye udyakalashe kumqolo wemfene, wakhwela emthini, wakha ipesika watya, wakha eyesibini watya, wakha eyesithathu watya efihla iipeta ukuze imfene ingaqapheli. Watya, watya, tu ukuhla.",
+    "“Dyakalashe, Dyakalashe!” yakhwaza imfene.",
+    "“Kudala ukhwele emthini, gqiba. Sivumelene ngelithi utye ipesika ibenye, wehle ukuze nam ndibuyele.” Yatsho ngelizwi elingenathemba imfene.",
+    "“Ndisakhetha mhlobo wam, linda” waphendula udyakalashe, elo xoki latya isisu sabomvu.",
+    "Yancama yabuyela elityeni imfene idanile, ibuhlungu. Yafika yasitsho isikhalo, intliziyo ibuhlungu, udyakalashe eyigqebhe elingophiyo iduma.",
+    "Wagqitha futhi umhakhulu evela entsimini, wabuza “uyawenzeni udyakalashe, yini ukhale kangaka?”",
+    "Yaphendula ngentliziyo ebuhlungu imfene ibalisela umhakhulu indlela angenanyani ngayo udyakalashe. Wayithuthuzela umhakhulu, wayinika la sheleni ukuze ithenge iipesika neebhanana evenkileni ekufutshane. Yavuya kakhulu imfene yakucinga iibhanana yancuma yodwa yonwabile.",
+    "@Phela phela ngantsomi yemfene nodyakalashe."
+  ]
+};
+
+var app = document.getElementById("app");
+
+function el(tag, cls, text) {
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text) e.textContent = text;
+  return e;
+}
+
+function renderHome() {
+  document.title = SITE.title;
+  app.textContent = "";
+  var top = el("header", "top");
+  top.appendChild(el("div", "sun"));
+  top.appendChild(el("h1", "", SITE.title));
+  top.appendChild(el("p", "", SITE.blurb));
+  app.appendChild(top);
+
+  var main = el("main");
+  STORIES.forEach(function (s) {
+    var a = el("a", "row");
+    a.href = "#/" + s.id;
+    a.appendChild(el("h2", "", s.title));
+    a.appendChild(el("p", "", s.blurb));
+    var m = el("div", "meta");
+    m.appendChild(el("span", "", s.tag));
+    if (s.xh) m.appendChild(el("span", "", "English and isiXhosa"));
+    m.appendChild(el("span", "", s.minutes + " min read"));
+    a.appendChild(m);
+    main.appendChild(a);
+  });
+  main.appendChild(el("p", "soon", "More stories are on the way."));
+  app.appendChild(main);
+}
+
+function renderStory(s, lang) {
+  var c = (lang === "xh" && s.xh) ? s.xh : s;
+  var isXh = c === s.xh;
+  document.title = c.title + " | " + SITE.title;
+  app.textContent = "";
+  var back = el("a", "back", "All stories");
+  back.href = "#/";
+  app.appendChild(back);
+
+  if (s.xh) {
+    var nav = el("nav", "lang");
+    nav.setAttribute("aria-label", "Language");
+    [["English", "#/" + s.id, !isXh], ["isiXhosa", "#/" + s.id + "/xh", isXh]].forEach(function (l) {
+      var a = el("a", "", l[0]);
+      a.href = l[1];
+      if (l[0] === "isiXhosa") a.lang = "xh";
+      if (l[2]) a.setAttribute("aria-current", "true");
+      nav.appendChild(a);
+    });
+    app.appendChild(nav);
+  }
+
+  var art = el("article");
+  art.lang = isXh ? "xh" : "en";
+  art.appendChild(el("h1", "", c.title));
+  art.appendChild(el("p", "note", c.note));
+  c.body.forEach(function (p) {
+    if (p.charAt(0) === "@") art.appendChild(el("p", "end", p.slice(1)));
+    else art.appendChild(el("p", "", p));
+  });
+  app.appendChild(art);
+}
+
+function route() {
+  var parts = location.hash.replace(/^#\/?/, "").split("/");
+  var story = STORIES.filter(function (s) { return s.id === parts[0]; })[0];
+  if (story) renderStory(story, parts[1]); else renderHome();
+  window.scrollTo(0, 0);
+}
+
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
